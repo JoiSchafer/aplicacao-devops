@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo à Página Inicial</h1>
+    <p>Esta é a página servida pelo servidor Node.js e Express.</p>
+    <h2>Lista de Integrantes</h2>
+    <ul id="integrantes-list"></ul>
+
+    <script>
+        fetch('/integrantes')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('integrantes-list');
+                data.integrantes.push(
+                    { nome: 'Bianca Volpato' },
+                    { nome: 'Joyce Denise' },
+                    { nome: 'Afonso Fagundes' }
+                );
+                data.integrantes.forEach(integrante => {
+                    const li = document.createElement('li');
+                    li.textContent = integrante.nome;
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os integrantes:', error));
+    </script>
+</body>
+</html>
