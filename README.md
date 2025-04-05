@@ -1,4 +1,4 @@
-# h1 Aplicação da Disciplina de Devops
+# Aplicação da Disciplina de Devops
 
 Essa aplicação tem como objetivo a realização de consulta dos integrantes do grupo da primeira avaliação da disciplina de Ferramentas de Implantação Contínua Devops.
 
